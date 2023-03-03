@@ -1,0 +1,16 @@
+@import "./scss/Navbar.scss"; 
+@import "./scss/HomePage.scss";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+*::before{
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
