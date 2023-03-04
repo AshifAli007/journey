@@ -1,37 +1,55 @@
 import Navbar from '../Components/Navbar';
 
-const HomePage = () => {
+const WizardHome = () => {
   return (
     <div>
       <Navbar />
-      <section className="forest">
+      <section className="wizard">
         <h2 id="text">
-          <span>It's time for a new</span>
+          <span>It's time to enter</span>
           <br />
-          Adventure
+          Wizard Valley
         </h2>
-        <img alt="bird1" src="assets/img/bird1.png" id="bird1" />
-        <img alt="bird2" src="assets/img/bird2.png" id="bird2" />
-        <img
+        {/* <img alt="bird1" src="assets/img/bird1.png" id="bird1" />
+        <img alt="bird2" src="assets/img/bird2.png" id="bird2" /> */}
+        {/* <img
           className="background"
-          alt="forest"
-          src="assets/img/forest.png"
-          id="forest"
-        />
+          alt="sky"
+          src="assets/img/wizard/sky.png"
+          id="sky"
+        /> */}
+        {/* <img
+          className="background"
+          alt="stars"
+          src="assets/img/wizard/stars.png"
+          id="stars"
+        /> */}
         <a href="#" className="btn">
           Explore
         </a>
         <img
           className="background"
-          alt="rocks"
-          src="assets/img/rocks.png"
-          id="rocks"
+          alt="backgroundRocks"
+          src="assets/img/wizard/backgroundRocks.png"
+          id="backgroundRocks"
         />
         <img
           className="background"
-          alt="water"
-          src="assets/img/water.png"
-          id="water"
+          alt="clouds"
+          src="assets/img/wizard/clouds.png"
+          id="clouds"
+        />
+        <img
+          className="background"
+          alt="backRocks"
+          src="assets/img/wizard/backRocks.png"
+          id="backRocks"
+        />
+        <img
+          className="background"
+          alt="bottomRocks"
+          src="assets/img/wizard/bottomRocks.png"
+          id="bottomRocks"
         />
       </section>
       <div className="sec">
@@ -93,4 +111,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default WizardHome;

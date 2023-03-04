@@ -1,14 +1,15 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import HomePage from './Pages/HomePage';
 import './App.scss';
 import './Scripts/homePage';
+import HomePage from './Pages/HomePage';
+import WizardHome from './Pages/WizardHome';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<HomePage />} exact />
+          <Route path="/" element={<WizardHome />} exact />
         </Routes>
       </BrowserRouter>
     </div>
