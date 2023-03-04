@@ -24,9 +24,21 @@ const WizardHome = () => {
           src="assets/img/wizard/stars.png"
           id="stars"
         /> */}
+        {/* <img alt="moons" src="assets/img/wizard/moons.png" id="moons" /> */}
+        {/* <img
+          alt="floatingRocksLeft"
+          src="assets/img/wizard/floatingRocksLeft.png"
+          id="floatingRocksLeft"
+        />
+        <img
+          alt="floatingRocksRight"
+          src="assets/img/wizard/floatingRocksRight.png"
+          id="floatingRocksRight"
+        /> */}
         <a href="#" className="btn">
           Explore
         </a>
+
         <img
           className="background"
           alt="backgroundRocks"
@@ -50,6 +62,11 @@ const WizardHome = () => {
           alt="bottomRocks"
           src="assets/img/wizard/bottomRocks.png"
           id="bottomRocks"
+        />
+        <img
+          alt="wizardGirl"
+          src="assets/img/wizard/wizardGirl.png"
+          id="wizardGirl"
         />
       </section>
       <div className="sec">
