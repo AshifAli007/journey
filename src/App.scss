@@ -1,5 +1,6 @@
 @import "./scss/Navbar.scss"; 
 @import "./scss/HomePage.scss";
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
 
 *{
     margin: 0;
@@ -12,4 +13,5 @@ body{
     overflow-x: hidden;
     box-sizing: border-box;
     min-height: 100vh;
+    scroll-behavior: smooth;
 }
