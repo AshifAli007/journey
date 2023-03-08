@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.scss';
 import './Scripts/homePage';
+import './Scripts/wizardScript';
 import HomePage from './Pages/HomePage';
 import WizardHome from './Pages/WizardHome';
 

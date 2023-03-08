@@ -24,6 +24,11 @@ const WizardHome = () => {
           src="assets/img/wizard/stars.png"
           id="stars"
         /> */}
+        <img
+          alt="magicBroom"
+          src="assets/img/wizard/magicBroom.png"
+          id="magicBroom"
+        />
         {/* <img alt="moons" src="assets/img/wizard/moons.png" id="moons" /> */}
         {/* <img
           alt="floatingRocksLeft"
