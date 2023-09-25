@@ -57,7 +57,7 @@ section.wizard {
     opacity: 30%;
     z-index: 15;
     top: 1%;
-    left: 16%;
+    left: -100%;
   }
 
   #sky {
@@ -96,7 +96,7 @@ section.wizard {
     position: absolute;
     z-index: 8;
     top: 25%;
-    animation: floatingRightRocks 3s ease-in-out 5s infinite;
+    animation: floatingRightRocks 60s ease-in-out infinite;
   }
 
   #backgroundRocks {
@@ -173,6 +173,19 @@ section.wizard {
     transform: translateY(100px);
   }
 }
+.aboutContainer {
+  height: 90vh;
+  background-color: cyan;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  padding: 0 7%;
+  .aboutDetails {
+    width: 55%;
+    height: 75%;
+    background-color: pink;
+  }
+}
 @keyframes floatingRightRocks {
   0% {
     top: 25%;
@@ -180,8 +193,8 @@ section.wizard {
   }
 
   50% {
-    top: 27%;
-    right: 13%;
+    top: 0%;
+    right: 0%;
   }
 
   100% {
