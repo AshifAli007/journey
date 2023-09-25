@@ -1,4 +1,4 @@
-import Navbar from '../Components/Navbar';
+import Navbar from "../Components/Navbar";
 
 const HomePage = () => {
   return (
@@ -19,6 +19,7 @@ const HomePage = () => {
           id="forest"
         />
         <a href="#" className="btn">
+          <h1>this is the h1 which </h1>
           Explore
         </a>
         <img

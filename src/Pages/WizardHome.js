@@ -1,10 +1,69 @@
-import Navbar from '../Components/Navbar';
+import Navbar from "../Components/Navbar";
+import { useEffect } from "react";
+import $ from "jquery";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+let ignore = false;
 
 const WizardHome = () => {
+  const attachAnimations = () => {
+    const time = gsap.timeline({
+      delay: 0,
+
+      scrollTrigger: {
+        trigger: ".wizard",
+        start: "top top",
+        end: "top -500%",
+        scrub: true,
+        markers: true,
+        pin: ".wizard",
+        pinSpacing: true,
+        pinnedContainer: ".wizard",
+      },
+    });
+    time
+      .to("#clouds", { left: "50%" })
+      .to("#backgroundRocks", { top: "10%" }, 0.1)
+      .to("#backRocks", { top: "1%" }, 0.1);
+    // gsap.to("#clouds", {
+    //   left: "50%",
+    //   scrollTrigger: {
+    //     trigger: ".wizard",
+    //     start: "top top",
+    //     end: "top -30%",
+    //     scrub: true,
+    //     markers: true,
+    //     pin: ".wizard",
+    //     pinSpacing: true,
+    //     pinnedContainer: ".wizard",
+    //   },
+    // });
+    // gsap.to("#backgroundRocks", {
+    //   top: "30%",
+    //   scrollTrigger: {
+    //     trigger: ".wizard",
+    //     start: "top top",
+    //     end: "top -30%",
+    //     scrub: true,
+    //     markers: true,
+    //     pin: ".wizard",
+    //     pinSpacing: true,
+    //     pinnedContainer: ".wizard",
+    //   },
+    // });
+  };
+
+  useEffect(() => {
+    if (!ignore) attachAnimations();
+    return () => {
+      ignore = true;
+    };
+  }, []);
   return (
     <div>
       <Navbar />
-      <section className="wizard">
+      <section className="wizard trigger">
         <h2 id="text">
           <span>It's time to enter</span>
           <br />
@@ -30,7 +89,7 @@ const WizardHome = () => {
           id="magicBroom"
         />
         {/* <img alt="moons" src="assets/img/wizard/moons.png" id="moons" /> */}
-        {/* <img
+        <img
           alt="floatingRocksLeft"
           src="assets/img/wizard/floatingRocksLeft.png"
           id="floatingRocksLeft"
@@ -39,7 +98,7 @@ const WizardHome = () => {
           alt="floatingRocksRight"
           src="assets/img/wizard/floatingRocksRight.png"
           id="floatingRocksRight"
-        /> */}
+        />
         <a href="#" className="btn">
           Explore
         </a>
@@ -51,7 +110,7 @@ const WizardHome = () => {
           id="backgroundRocks"
         />
         <img
-          className="background"
+          className="background clouds"
           alt="clouds"
           src="assets/img/wizard/clouds.png"
           id="clouds"
