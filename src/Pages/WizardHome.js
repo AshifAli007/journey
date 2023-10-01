@@ -133,10 +133,40 @@ const WizardHome = () => {
           id="wizardGirl"
         />
       </section>
-      <div className="sec">
-        <div className="aboutContainer">
-          <h2>About Me</h2>
-          <div className="aboutDetails"></div>
+      <div className="aboutContainer">
+        <h2>About Me</h2>
+        <div className="aboutDetails">
+          <img
+            src="assets/img/wizard/photo.jpeg"
+            alt="wizardGirl"
+            className="photo"
+          />
+          <p>
+            Mohd Ashif is a Speaker, VP of Developer Experience at Netlify, Vue
+            core team member, and Staff Writer at CSS-Tricks. Sarah is formerly
+            Principal Lead of Emerging Markets, Cloud Advocates at Microsoft and
+            Manager of UX & Engineering at Trulia/Zillow Group. She’s the author
+            of SVG Animations from O’Reilly and has given Frontend Masters
+            workshops. Sarah is a co-organizer of ConcatenateConf, a free
+            conference for Nigerian and Kenyan developers. Sarah is also the
+            co-founder of Web Animation Workshops with Val Head. She has worked
+            for 15 years as a web developer, and at points worked as a
+            Scientific Illustrator and a Professor in the Greek Islands.
+          </p>
+        </div>
+      </div>
+      <div className="contactContainer">
+        <div className="contactForm">
+          <h2>SAY HELLO</h2>
+          <form action="" className="form">
+            <label for="name">Name</label>
+            <input type="text" id="name" />
+            <label for="email">email</label>
+            <input type="email" id="email" />
+            <label for="msg">Message</label>
+            <textarea name="" id="msg" cols="30" rows="10"></textarea>
+            <button type="submit">Send</button>
+          </form>
         </div>
       </div>
     </div>
