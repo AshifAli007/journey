@@ -3,14 +3,24 @@ import { useEffect } from "react";
 import $ from "jquery";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Footer from "../Components/Footer";
 gsap.registerPlugin(ScrollTrigger);
 let ignore = false;
 
 const WizardHome = () => {
   const attachAnimations = () => {
+    $(document).on("click", "#toAboutContainer", function (event) {
+      event.preventDefault();
+
+      $("html, body").animate(
+        {
+          scrollTop: $($.attr(this, "href")).offset().top,
+        },
+        5000
+      );
+    });
     const time = gsap.timeline({
       delay: 0,
-
       scrollTrigger: {
         trigger: ".wizard",
         start: "top top",
@@ -24,6 +34,9 @@ const WizardHome = () => {
     });
     time
       .to("#clouds", { left: "80%" })
+      .to("#toAboutContainer", { zIndex: "0" }, 0)
+      .to("#text", { bottom: "5%" }, 0)
+      .to("#text1", { bottom: "50%", zIndex: 10 }, 0.2)
       .to("#backgroundRocks", { top: "10%" }, 0.1)
       .to("#backRocks", { top: "1%" }, 0.1);
     // gsap.to("#clouds", {
@@ -64,11 +77,16 @@ const WizardHome = () => {
     <div>
       <Navbar />
       <section className="wizard trigger">
-        <h2 id="text">
-          <span>It's time to enter</span>
-          <br />
-          Wizard Valley
-        </h2>
+        <h2 id="text">Wizard Valley</h2>
+        <a
+          id="toAboutContainer"
+          href="#aboutContainer"
+          data-scroll-time="20"
+          className="btn"
+        >
+          Explore
+        </a>
+        <span id="text1">I animate things</span>
         {/* <img alt="bird1" src="assets/img/bird1.png" id="bird1" />
         <img alt="bird2" src="assets/img/bird2.png" id="bird2" /> */}
         {/* <img
@@ -99,9 +117,6 @@ const WizardHome = () => {
           src="assets/img/wizard/floatingRocksRight.png"
           id="floatingRocksRight"
         />
-        <a href="#" className="btn">
-          Explore
-        </a>
 
         <img
           className="background"
@@ -133,7 +148,7 @@ const WizardHome = () => {
           id="wizardGirl"
         />
       </section>
-      <div className="aboutContainer">
+      <div id="aboutContainer" className="aboutContainer">
         <h2>About Me</h2>
         <div className="aboutDetails">
           <img
@@ -169,6 +184,7 @@ const WizardHome = () => {
           </form>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
