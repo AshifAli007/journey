@@ -5,6 +5,9 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 const Footer = () => {
   return (
     <div className="footer">
+      <a href="/">
+        <img src="assets/img/eagle.svg" />
+      </a>
       <ul>
         <li>Writing</li>
         <li>Speaking</li>

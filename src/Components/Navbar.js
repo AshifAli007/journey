@@ -1,7 +1,16 @@
 const Navbar = () => {
   return (
     <div className="navbar">
-      <div className="logo">MOHD ASHIF</div>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          cursor: "pointer",
+        }}
+      >
+        <img src="assets/img/eagle.svg" />
+        <div className="logo">MOHD ASHIF</div>
+      </div>
       <div className="links">
         <ul>
           <li>Writing</li>

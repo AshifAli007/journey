@@ -323,6 +323,11 @@ section.wizard {
   text-align: center;
   width: 100vw;
   padding: 50px 8vw 30px;
+  img {
+    height: 40px;
+    width: 40px;
+    margin-bottom: 30px;
+  }
   ul {
     font-family: Gotham XNarrow A, Gotham XNarrow B, -apple-system,
       BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
