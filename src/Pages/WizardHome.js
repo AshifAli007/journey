@@ -8,6 +8,7 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import emailjs from "@emailjs/browser";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert, { AlertProps } from "@mui/material/Alert";
+import DownloadIcon from "@mui/icons-material/Download";
 
 gsap.registerPlugin(ScrollTrigger);
 let ignore = false;
@@ -228,6 +229,10 @@ const WizardHome = () => {
             using MongoDB. love solving mathematical, logical, and real-world
             problems by automating repetitive tasks.
           </p>
+          <a className="resume" href="assets/img/Tesla_Internship.pdf" download>
+            Resume
+            <DownloadIcon />
+          </a>
         </div>
       </div>
       <div className="contactContainer">

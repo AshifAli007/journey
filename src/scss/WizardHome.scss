@@ -199,7 +199,8 @@ section.wizard {
   }
   .aboutDetails {
     width: 55%;
-    padding: 5% 4%;
+    position: relative;
+    padding: 5% 4% 7%;
     background: rgba(0, 0, 0, 0.4);
     color: #b5b3b3;
     border-left: 2px solid #1aacac;
@@ -315,6 +316,19 @@ section.wizard {
 }
 .show-scroll {
   bottom: 3rem;
+}
+.resume {
+  background: grey;
+  bottom: 9%;
+  padding: 7px 15px;
+  border-radius: 8px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  width: max-content;
+  position: absolute;
 }
 .footer {
   background: #141618;
