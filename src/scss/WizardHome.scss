@@ -300,6 +300,22 @@ section.wizard {
     }
   }
 }
+.scrollUp {
+  position: fixed;
+  right: 1.5rem;
+  bottom: -20%;
+  color: white;
+  background: #1aacac;
+  opacity: 0.8;
+  padding: 9px 9px 7px 9px;
+  border-radius: 9px;
+  z-index: 15;
+  transition: 0.4s;
+  cursor: pointer;
+}
+.show-scroll {
+  bottom: 3rem;
+}
 .footer {
   background: #141618;
   position: relative;

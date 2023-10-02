@@ -1,13 +1,22 @@
 import Navbar from "../Components/Navbar";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import $ from "jquery";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Footer from "../Components/Footer";
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+
 gsap.registerPlugin(ScrollTrigger);
 let ignore = false;
 
 const WizardHome = () => {
+  const aboutRef = useRef(null);
+  const scrollTop = () => {
+    const position = window.pageYOffset;
+    const scrollTop = document.getElementById("scroll-up");
+    if (position >= 560) scrollTop.classList.add("show-scroll");
+    else scrollTop.classList.remove("show-scroll");
+  };
   const attachAnimations = () => {
     $(document).on("click", "#toAboutContainer", function (event) {
       event.preventDefault();
@@ -15,6 +24,16 @@ const WizardHome = () => {
       $("html, body").animate(
         {
           scrollTop: $($.attr(this, "href")).offset().top,
+        },
+        5000
+      );
+    });
+    $(document).on("click", "#scroll-up", function (event) {
+      event.preventDefault();
+
+      $("html, body").animate(
+        {
+          scrollTop: 0,
         },
         5000
       );
@@ -69,13 +88,19 @@ const WizardHome = () => {
 
   useEffect(() => {
     if (!ignore) attachAnimations();
+    window.addEventListener("scroll", scrollTop, { passive: true });
+
     return () => {
       ignore = true;
+      window.removeEventListener("scroll", scrollTop);
     };
   }, []);
   return (
     <div>
       <Navbar />
+      <a className="scrollUp" id="scroll-up">
+        <ArrowUpwardIcon sx={{ fontSize: 20 }} />
+      </a>
       <section className="wizard trigger">
         <h2 id="text">Wizard Valley</h2>
         <a
@@ -87,6 +112,7 @@ const WizardHome = () => {
           Explore
         </a>
         <span id="text1">I animate things</span>
+
         {/* <img alt="bird1" src="assets/img/bird1.png" id="bird1" />
         <img alt="bird2" src="assets/img/bird2.png" id="bird2" /> */}
         {/* <img
@@ -148,7 +174,7 @@ const WizardHome = () => {
           id="wizardGirl"
         />
       </section>
-      <div id="aboutContainer" className="aboutContainer">
+      <div id="aboutContainer" className="aboutContainer" ref={aboutRef}>
         <h2>About Me</h2>
         <div className="aboutDetails">
           <img
