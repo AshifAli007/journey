@@ -190,8 +190,8 @@ section.wizard {
   height: 90vh;
   display: flex;
   flex-flow: column;
-  justify-content: center;
-  padding: 0 7%;
+  justify-content: flex-start;
+  padding: 7%;
   h2 {
     font-size: 30px;
     margin-bottom: 2%;
@@ -199,7 +199,6 @@ section.wizard {
   }
   .aboutDetails {
     width: 55%;
-    height: 75%;
     padding: 5% 4%;
     background: rgba(0, 0, 0, 0.4);
     color: #b5b3b3;
@@ -210,6 +209,7 @@ section.wizard {
       border-radius: 50%;
       float: left;
       margin: 10px 30px 30px 10px;
+      object-fit: cover;
     }
     p {
       font-size: 18px;

@@ -1,16 +1,41 @@
 import Navbar from "../Components/Navbar";
-import { useEffect, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import $ from "jquery";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Footer from "../Components/Footer";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import emailjs from "@emailjs/browser";
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert, { AlertProps } from "@mui/material/Alert";
 
 gsap.registerPlugin(ScrollTrigger);
 let ignore = false;
 
 const WizardHome = () => {
   const aboutRef = useRef(null);
+  const form = useRef(null);
+  const [showMsg, setShowMsg] = useState(false);
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_o94x3nh",
+        "template_2tsue06",
+        form.current,
+        "PLOVJS9y2_pnYPcHY"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          form.current.reset();
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
   const scrollTop = () => {
     const position = window.pageYOffset;
     const scrollTop = document.getElementById("scroll-up");
@@ -101,6 +126,19 @@ const WizardHome = () => {
       <a className="scrollUp" id="scroll-up">
         <ArrowUpwardIcon sx={{ fontSize: 20 }} />
       </a>
+      {/* <Snackbar
+        open={showMsg}
+        autoHideDuration={6000}
+        onClose={() => setShowMsg(false)}
+      >
+        <Alert
+          onClose={() => setShowMsg(false)}
+          severity="success"
+          sx={{ width: "100%" }}
+        >
+          Your message delivered successfully
+        </Alert>
+      </Snackbar> */}
       <section className="wizard trigger">
         <h2 id="text">Wizard Valley</h2>
         <a
@@ -178,34 +216,30 @@ const WizardHome = () => {
         <h2>About Me</h2>
         <div className="aboutDetails">
           <img
-            src="assets/img/wizard/photo.jpeg"
+            src="assets/img/wizard/photo.png"
             alt="wizardGirl"
             className="photo"
           />
           <p>
-            Mohd Ashif is a Speaker, VP of Developer Experience at Netlify, Vue
-            core team member, and Staff Writer at CSS-Tricks. Sarah is formerly
-            Principal Lead of Emerging Markets, Cloud Advocates at Microsoft and
-            Manager of UX & Engineering at Trulia/Zillow Group. She’s the author
-            of SVG Animations from O’Reilly and has given Frontend Masters
-            workshops. Sarah is a co-organizer of ConcatenateConf, a free
-            conference for Nigerian and Kenyan developers. Sarah is also the
-            co-founder of Web Animation Workshops with Val Head. She has worked
-            for 15 years as a web developer, and at points worked as a
-            Scientific Illustrator and a Professor in the Greek Islands.
+            I'm a Professional developer with hands-on web development
+            background and significant React and Node-based project experience.
+            Build several web applications from scratch following Agile
+            methodology. Strong knowledge of NodeJS and Database management
+            using MongoDB. love solving mathematical, logical, and real-world
+            problems by automating repetitive tasks.
           </p>
         </div>
       </div>
       <div className="contactContainer">
         <div className="contactForm">
           <h2>SAY HELLO</h2>
-          <form action="" className="form">
+          <form ref={form} onSubmit={sendEmail} className="form">
             <label for="name">Name</label>
-            <input type="text" id="name" />
+            <input type="text" name="user_name" id="name" />
             <label for="email">email</label>
-            <input type="email" id="email" />
+            <input type="email" name="user_email" id="email" />
             <label for="msg">Message</label>
-            <textarea name="" id="msg" cols="30" rows="10"></textarea>
+            <textarea name="user_msg" id="msg" cols="30" rows="10"></textarea>
             <button type="submit">Send</button>
           </form>
         </div>
